@@ -1,1 +1,15 @@
-// PUT YOUR CODE HERE
+const boxTl = gsap.timeline()
+
+boxTl.from('.red', {x: '-100%', y: '-100%', scale: 0, duration: .6})
+     .from('.green', {x: '100%', y: '-100%', scale: 0, duration: .6})
+     .from('.blue', {x: '100%', y: '100%', scale: 0, duration: .6})
+     .from('.yellow', {x: '-100%', y: '100%', scale: 0, duration: .6})
+     .to('.red', {x: '100vw', xPercent: -100, backgroundColor: 'green', borderRadius: '50%', duration: 1})
+     .to('.green', {y: '100vh', yPercent: -100, backgroundColor: 'blue', borderRadius: '50%', duration: 1}, '<')
+     .to('.blue', {x: '-100vw', xPercent: 100, backgroundColor: 'yellow', borderRadius: '50%', duration: 1}, '<')
+     .to('.yellow', {y: '-100vh', yPercent: 100, backgroundColor: 'red', borderRadius: '50%', duration: 1}, '<')
+     .to('.red', {x: '100vw', xPercent: 0, duration: 1})
+     .to('.green', {x: '100%', duration: 1}, '<')
+     .to('.blue', {x: '-100vw', xPercent: 0, duration: 1}, '<')
+     .to('.yellow', {x: '-100%', duration: 1}, '<')
+     
